@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+    iris:
+        image: store/intersystems/iris-community:2020.2.0.211.0
+        restart: always
+        hostname: 'iris'
+        volumes:
+            - ./iris/:/durable
+        expose:
+            - "51773"
+            - "52773"
+        command: --password-file /durable/password.txt 
+    python:
+        build: python/.
+        depends_on:
+            - iris
+        links:
+            - iris
+        restart: always
+        hostname: 'python'
+        #init: true
+    
