@@ -4,9 +4,9 @@ This simple repository that uses InterSystems IRIS as a database and python cont
  
 This examples runs the globals.py code repeatedly (first couple of times it runs to error because it just does not want to wait for IRIS to load, but as soon as it is loaded it performs successfully)
  
-  git clone https://github.com/renesto/pyIRIS-template.git
-  cd pyIRIS-template/
-  docker-compose up
+    git clone https://github.com/renesto/pyIRIS-template.git
+    cd pyIRIS-template/
+    docker-compose up
 
 It loads IRIS and then afterwards the python container sets a global (in native IRIS language called Objectscript, command SET creates the global).
  
